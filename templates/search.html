@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Buscar jogo {% endblock %}</h1>
+
+    <form method="post" action="/search">
+        <p>
+            <label for="nome">Nome do jogo</label>
+            <input type="text" name="nome">
+            </input>
+        </p>
+
+        <p>
+            <label for="empresa">Empresa</label>
+            <input type="text" name="empresa">
+            </input>
+        </p>
+
+        <p>
+            <label for="genero">Gênero</label>
+            <input type="text" name="genero">
+            </input>
+        </p>
+
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}

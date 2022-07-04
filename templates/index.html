@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Catálogo de Jogos {% endblock %}</h1>
+    {% for jogo in jogos %}
+        <div class="games">
+            <h3>{{ jogo[2] }}</h3>
+            <div class="block-infos">
+                <div class="infos">
+                    <p> Empresa: {{ jogo[1] }}</p>
+                    <p> Data de lançamento: {{ jogo[3] }}</p>
+                    <p> Valor: R$ {{ jogo[4] }}</p>
+                    <p> Gênero: {{ jogo[5] }}</p>
+                </div>
+                <div class="description">
+                    <p> {{ jogo[6] }}</p>
+                    {% if jogo[7] != 0 %}
+                        <p> {{ jogo[7] }} </p>
+                    {% endif %}
+                    <a href="{{ jogo[8] }}">
+                        <img src="http://img.youtube.com/vi/{{ jogo[8].split("?v=")[1].strip() }}/default.jpg" alt="Trailer" />
+                    </a>
+                </div>
+            </div>
+                <a href="/insert/{{ jogo[2] }}"><button>Review</button></a>
+        </div>
+    {% endfor %}
+{% endblock %}

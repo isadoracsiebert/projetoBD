@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Review {% endblock %}</h1>
+    <h2> {{ game }}</h2>
+
+    <form method="post">
+        <p>
+            <label for="usuario">Nome de usuário</label>
+            <input type="text" name="usuario"
+                   placeholder="Seu nome de usuário..." required>
+            </input>
+        </p>
+
+        <p>
+            <label for="avaliacao">Avaliação</label>
+            <input type="text" name="avaliacao"
+                   placeholder="0-10" required>
+            </input>
+        </p>
+
+        <p>
+            <label for="texto">Comentário</label>
+            <input type="text" name="texto"
+                   placeholder="Sua review..." required>
+            </input>
+        </p>
+
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}

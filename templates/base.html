@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogos Indies</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+
+        .games {
+            display: block;
+            padding: 20px;
+            margin: 10px;
+            background-color: #f7f4f4;
+        }
+
+        .infos {
+            display: inline;
+        }
+
+        .block-infos {
+            display: -webkit-box;
+        }
+
+        .description {
+            margin-left: 10%;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Jogos Indies</a>
+        <a href="{{ url_for('search') }}">Buscar jogo</a>
+    </nav>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+    <br>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
